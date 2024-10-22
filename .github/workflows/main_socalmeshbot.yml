@@ -14,29 +14,27 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
+      uses: docker/setup-buildx-action@v2
 
     - name: Log in to registry
-      uses: docker/login-action@v3
+      uses: docker/login-action@v2
       with:
-        registry: dragones.azurecr.io 
+        registry: dragones.azurecr.io
         username: ${{ secrets.AzureAppService_ContainerUsername_1ed55587fd474a6685d49af448067bad }}
         password: ${{ secrets.AzureAppService_ContainerPassword_4fc6e7e4f599453a81d4f70c8802b08d }}
 
     - name: Build and push container image to registry
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v3
       with:
         push: true
-        tags: |
-          dragones.azurecr.io/socalmeshbot:${{ github.sha }}
-        file: ./Dockerfile  # Make sure the path is correct
+        tags: dragones.azurecr.io/socalmeshbot:${{ github.sha }}
+        file: ./Dockerfile  # Make sure this is the correct path to your Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
     - name: Deploy to Azure Web App
@@ -45,5 +43,4 @@ jobs:
       with:
         app-name: 'socalmeshbot'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_1027a7ef2c324fb1a4275ee4a67ff831 }}
-        images: |
-          dragones.azurecr.io/socalmeshbot:${{ github.sha }}
+        images: dragones.azurecr.io/socalmeshbot:${{ github.sha }}
