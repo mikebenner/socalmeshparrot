@@ -239,7 +239,7 @@ if (!process.env.DISCORD_WEBHOOK_URL) {
   process.exit(-1);
 }
 
-const baWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
+const baWebhookUrl = https://discord.com/api/webhooks/1298171883417632818/rAvS70vDpOv0M8F8Hq2vB_WBHH6Zj5_RfZOqyhDR00MYw8t2987j0DykUwStMoHmftFs;
 const svWebhookUrl = process.env.SV_DISCORD_WEBHOOK_URL;
 
 const mesh_topic = process.env.MQTT_TOPIC || "msh/US/bayarea";
