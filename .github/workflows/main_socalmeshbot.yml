@@ -44,3 +44,4 @@ jobs:
         app-name: 'socalmeshbot'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_1027a7ef2c324fb1a4275ee4a67ff831 }}
         images: dragones.azurecr.io/socalmeshbot:${{ github.sha }}
+        runtime-stack: 'NODE|20-lts'  # Specify the runtime (Node.js 20 on Linux)
