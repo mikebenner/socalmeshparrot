@@ -479,10 +479,10 @@ const baymesh_client = mqtt.connect(basymeshMqttBrokerUrl, {
 });
 
 const ba_home_topics = [
-  "msh/US/bayarea",
-  "msh/US/BayArea",
-  "msh/US/CA/bayarea",
-  "msh/US/CA/BayArea",
+  "msh/US/socalmesh",
+  "msh/US/SoCalMesh",
+  "msh/US/CA/socalmesh",
+  "msh/US/CA/SoCalMesh",
 ];
 
 const sv_home_topics = [
