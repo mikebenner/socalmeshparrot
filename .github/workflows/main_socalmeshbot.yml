@@ -27,20 +27,5 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: dragones.azurecr.io/socalmeshbot:${{ github.sha }}
-        file: ./Dockerfile  # Make sure this is the correct path to your Dockerfile
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'production'
-
-    steps:
-    - name: Deploy to Azure Web App
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v3
-      with:
-        app-name: 'socalmeshbot'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1027a7ef2c324fb1a4275ee4a67ff831 }}
-        images: dragones.azurecr.io/socalmeshbot:${{ github.sha }}
+        tags: dragones.azurecr.io/socalmeshbot:latest
+        file: ./Dockerfile
