@@ -11,10 +11,10 @@ jobs:
     runs-on: 'ubuntu-latest'
 
     steps:
-    - uses: actions/checkout@latest
+    - uses: actions/checkout
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@latest
+      uses: docker/setup-buildx-action
 
     - name: Log in to registry
       uses: docker/login-action@v2
@@ -24,7 +24,7 @@ jobs:
         password: ${{ secrets.AzureAppService_ContainerPassword_4fc6e7e4f599453a81d4f70c8802b08d }}
 
     - name: Build and push container image to registry
-      uses: docker/build-push-action@latest
+      uses: docker/build-push-action
       with:
         push: true
         tags: |
@@ -41,7 +41,7 @@ jobs:
     steps:
     - name: Deploy to Azure Web App
       id: deploy-to-webapp
-      uses: azure/webapps-deploy@latest
+      uses: azure/webapps-deploy
       with:
         app-name: 'socalmeshbot'
         slot-name: 'production'  # Ensure the slot exists in Azure Web App
