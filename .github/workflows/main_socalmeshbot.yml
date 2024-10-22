@@ -19,7 +19,7 @@ jobs:
     - name: Log in to registry
       uses: docker/login-action@v2
       with:
-        registry: dragones.azurecr.io  # No https:// prefix
+        registry: dragones.azurecr.io 
         username: ${{ secrets.AzureAppService_ContainerUsername_1ed55587fd474a6685d49af448067bad }}
         password: ${{ secrets.AzureAppService_ContainerPassword_4fc6e7e4f599453a81d4f70c8802b08d }}
 
@@ -28,8 +28,7 @@ jobs:
       with:
         push: true
         tags: |
-          dragones.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1ed55587fd474a6685d49af448067bad }}/socalmeshbot:${{ github.sha }}
-          dragones.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1ed55587fd474a6685d49af448067bad }}/socalmeshbot:latest
+          dragones.azurecr.io/socalmeshbot:latest
         file: ./Dockerfile  # Make sure the path is correct
 
   deploy:
@@ -48,5 +47,4 @@ jobs:
         slot-name: 'production'  # Ensure the slot exists in Azure Web App
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_1027a7ef2c324fb1a4275ee4a67ff831 }}
         images: |
-          dragones.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1ed55587fd474a6685d49af448067bad }}/socalmeshbot:${{ github.sha }}
-          dragones.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1ed55587fd474a6685d49af448067bad }}/socalmeshbot:latest
+          dragones.azurecr.io/socalmeshbot:latest
