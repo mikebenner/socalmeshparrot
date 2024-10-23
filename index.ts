@@ -241,7 +241,7 @@ if (!process.env.DISCORD_WEBHOOK_URL) {
 const baWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
 const svWebhookUrl = process.env.SV_DISCORD_WEBHOOK_URL;
 
-const mesh_topic = process.env.MQTT_TOPIC || "msh/US/bayarea";
+const mesh_topic = process.env.MQTT_TOPIC || "msh/US/CA/SoCalMesh";
 const grouping_duration = parseInt(process.env.GROUPING_DURATION || "10000");
 
 function sendDiscordMessage(webhookUrl: string, payload: any) {
