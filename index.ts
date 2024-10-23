@@ -60,8 +60,7 @@ if (process.env.PFP_JSON_URL) {
   });
 }
 
-const mqttBrokerUrl = "mqtt://mqtt.meshtastic.org"; // the original project took a nose dive, so this server is trash
-const basymeshMqttBrokerUrl = "mqtt://mqtt.bayme.sh";
+const mqttBrokerUrl = "mqtt://mqtt.meshtastic.org";
 const mqttUsername = "meshdev";
 const mqttPassword = "large4cats";
 
@@ -473,7 +472,7 @@ const createDiscordMessage = async (packetGroup, text) => {
 //   password: mqttPassword,
 // });
 
-const baymesh_client = mqtt.connect(basymeshMqttBrokerUrl, {
+const baymesh_client = mqtt.connect(mqttBrokerUrl, {
   username: mqttUsername,
   password: mqttPassword,
 });
