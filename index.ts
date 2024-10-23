@@ -333,18 +333,18 @@ const createDiscordMessage = async (packetGroup, text) => {
     // console.log("maxHopStart", maxHopStart);
 
     const content = {
-      username: "Mesh Bot",
+      username: "SoCalMesh Parrot",
       avatar_url:
         "https://cdn.discordapp.com/app-icons/1240017058046152845/295e77bec5f9a44f7311cf8723e9c332.png",
       embeds: [
         {
-          url: `https://meshview.armooo.net/packet_list/${packet.from}`,
+          url: `https://meshtastic.liamcottle.net/?node_id=${packet.from}`,
           color: 6810260,
           timestamp: new Date(packet.rxTime * 1000).toISOString(),
 
           author: {
             name: `${nodeInfos[nodeIdHex] ? nodeInfos[nodeIdHex].longName : "Unknown"}`,
-            url: `https://meshview.armooo.net/packet_list/${packet.from}`,
+            url: `https://meshtastic.liamcottle.net/?node_id=${packet.from}`,
             icon_url: avatarUrl,
           },
           title: `${nodeInfos[nodeIdHex] ? nodeInfos[nodeIdHex].shortName : "UNK"}`,
