@@ -65,45 +65,8 @@ const mqttUsername = "meshdev";
 const mqttPassword = "large4cats";
 
 const redisClient = createClient({
-  url: process.env.REDIS_URL,  // Your Redis URL
-  socket: {
-    tls: true,               // Enable TLS for secure connections
-    connectTimeout: 30000,    // Set connection timeout (30 seconds)
-    keepAlive: 5000,          // Send keep-alive packets every 5 seconds to prevent idle disconnects
-  },
-  // Retry strategy: handle connection failures with exponential backoff
-  retry_strategy: (options) => {
-    if (options.error && options.error.code === 'ECONNRESET') {
-      return new Error('Connection reset by the server');
-    }
-    if (options.total_retry_time > 1000 * 60 * 10) {  // Stop after 10 minutes
-      return new Error('Retry time exhausted');
-    }
-    if (options.attempt > 10) {  // Stop after 10 attempts
-      return undefined;
-    }
-    return Math.min(options.attempt * 100, 3000);  // Exponential backoff
-  },
+  url: process.env.REDIS_URL,
 });
-
-// Handle Redis client events to log connection issues
-redisClient.on('error', (err) => {
-  console.error('Redis connection error: ', err);
-});
-
-redisClient.on('ready', () => {
-  console.log('Redis connection established.');
-});
-
-redisClient.on('reconnecting', () => {
-  console.log('Reconnecting to Redis...');
-});
-
-// Connect the Redis client
-redisClient.connect()
-  .then(() => console.log('Successfully connected to Redis'))
-  .catch((err) => console.error('Failed to connect to Redis: ', err));
-
 
 (async () => {
   if (process.env.REDIS_ENABLED === "true") {
