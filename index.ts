@@ -60,7 +60,7 @@ if (process.env.PFP_JSON_URL) {
   });
 }
 
-const mqttBrokerUrl = "mqtt://mqtt.bayme.sh";
+const mqttBrokerUrl = "mqtt://mqtt.meshtastic.org";
 const mqttUsername = "meshdev";
 const mqttPassword = "large4cats";
 
@@ -335,7 +335,7 @@ const createDiscordMessage = async (packetGroup, text) => {
     const content = {
       username: "SoCalMesh Parrot",
       avatar_url:
-        "https://cdn.discordapp.com/app-icons/1240017058046152845/295e77bec5f9a44f7311cf8723e9c332.png",
+        "https://cdn.discordapp.com/avatars/1292336040790724690/03c725a48b2f304c2c44f119a1111ff4.webp",
       embeds: [
         {
           url: `https://meshtastic.liamcottle.net/?node_id=${packet.from}`,
