@@ -60,7 +60,7 @@ if (process.env.PFP_JSON_URL) {
   });
 }
 
-const mqttBrokerUrl = "mqtt://mqtt.bayme.sh";
+const mqttBrokerUrl = "mqtt://mqtt.mbenner.com";
 const mqttUsername = "meshdev";
 const mqttPassword = "large4cats";
 
