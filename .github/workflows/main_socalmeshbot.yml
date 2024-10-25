@@ -27,5 +27,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: dragones.azurecr.io/socalmeshbot:latest
+        tags: |
+          dragones.azurecr.io/socalmeshbot:latest
+          dragones.azurecr.io/socalmeshparrot:latest
         file: ./Dockerfile
