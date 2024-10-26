@@ -481,12 +481,13 @@ const ba_home_topics = [
   "msh/US/SoCalMesh",
   "msh/US/CA/socalmesh",
   "msh/US/CA/SoCalMesh",
+  "msh/US/CA/missionviejo",
+  "msh/US/CA/losangelescounty",
+  "msh/US/CA/santaana",
+  "msh/US/CA/orangecounty",
 ];
 
 const sv_home_topics = [
-  "msh/US/sacvalley",
-  "msh/US/SacValley",
-  "msh/US/CA/sacvalley",
   "msh/US/CA/SacValley",
 ];
 
