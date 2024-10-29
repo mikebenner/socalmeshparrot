@@ -361,7 +361,7 @@ const createDiscordMessage = async (packetGroup, text) => {
             // },
             {
               name: "Packet",
-              value: `[${packetGroup.id.toString(16)}](https://meshview.armooo.net/packet/${packetGroup.id})`,
+              value: `[${packetGroup.id.toString(16)}]`,
               inline: true,
             },
             {
@@ -424,7 +424,7 @@ const createDiscordMessage = async (packetGroup, text) => {
 
                 return {
                   name: `Gateway`,
-                  value: `[${gatewayDisplaName} (${hopText})](https://meshview.armooo.net/packet_list/${nodeHex2id(envelope.gatewayId.replace("!", ""))})${gatewayDelay > 0 ? " (" + gatewayDelay + "ms)" : ""}`,
+                  value: `[${gatewayDisplaName} (${hopText})](https://meshtastic.liamcottle.net/?node_id=${nodeHex2id(envelope.gatewayId.replace("!", ""))})${gatewayDelay > 0 ? " (" + gatewayDelay + "ms)" : ""}`,
                   inline: true,
                 };
               }),
