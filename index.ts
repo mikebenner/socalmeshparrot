@@ -361,7 +361,7 @@ const createDiscordMessage = async (packetGroup, text) => {
             // },
             {
               name: "Packet",
-              value: `[${packetGroup.id.toString(16)}]`,
+              value: `${packetGroup.id.toString(16)}`,
               inline: true,
             },
             {
