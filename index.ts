@@ -486,6 +486,7 @@ const ba_home_topics = [
   "msh/US/CA/sandiegocounty",
   "msh/US/missionviejo",
   "msh/US/CA/santaana",
+  "msh/US/CA/anaheim",
 ];
 
 const sv_home_topics = [
